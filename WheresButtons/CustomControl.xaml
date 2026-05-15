@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WheresButtons.CustomControl"
+             x:Name="PseudoButtonControl">
+
+    <VerticalStackLayout
+        Margin="4">
+
+        <Label
+            SemanticProperties.Description="{Binding AccessibleName, Source={x:Reference PseudoButtonControl}}"
+            Text="{Binding Text, Source={x:Reference PseudoButtonControl}}"
+            FontSize="Large">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Label.GestureRecognizers>            
+        </Label>
+
+    </VerticalStackLayout>
+
+</ContentView>
