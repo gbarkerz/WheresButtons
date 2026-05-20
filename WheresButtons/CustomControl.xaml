@@ -4,18 +4,17 @@
              x:Class="WheresButtons.CustomControl"
              x:Name="PseudoButtonControl">
 
-    <VerticalStackLayout
-        Margin="4">
-
-        <Label
-            SemanticProperties.Description="{Binding AccessibleName, Source={x:Reference PseudoButtonControl}}"
-            Text="{Binding Text, Source={x:Reference PseudoButtonControl}}"
-            FontSize="Large">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
-            </Label.GestureRecognizers>            
-        </Label>
-
-    </VerticalStackLayout>
+        <Grid Margin="0">
+            <Label
+                SemanticProperties.Description="{Binding AccessibleName, Source={x:Reference PseudoButtonControl}}"
+                Text="{Binding Text, Source={x:Reference PseudoButtonControl}}"
+                FontSize="Title">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>            
+            </Label>
+        </Grid>
 
 </ContentView>
+
+    

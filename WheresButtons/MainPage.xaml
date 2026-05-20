@@ -7,7 +7,7 @@
 
     <ContentPage.Resources>
         <Style x:Key="RatingButtonStyle" TargetType="Button">
-            <Setter Property="FontSize" Value="Large" />
+            <Setter Property="FontSize" Value="Title" />
             <Setter Property="BackgroundColor" Value="Transparent" />
             <Setter Property="Margin" Value="4" />
             <Setter Property="Padding" Value="0" />
@@ -25,45 +25,42 @@
                 Style="{StaticResource Headline}" />
 
             <Label
-                Margin="40"
-                Text="{x:Static resources:Strings.Resources.MainPageInstructions}" />
+                Text="{x:Static resources:Strings.Resources.MainPageInstructions}"
+                Margin="40" />
 
             <Button
                 Text="{x:Static resources:Strings.Resources.OpenGithubReadMe}" 
                 Clicked="OnReadMeClicked" 
+                Margin="20"
                 HorizontalOptions="Center" />
 
-            <Grid
-                Margin="0,40,0,0">
+            <Grid Margin="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <HorizontalStackLayout Grid.Column="1">
+                <Button Grid.Column="1" Style="{StaticResource RatingButtonStyle}" 
+                    SemanticProperties.Description="{x:Static resources:Strings.Resources.RateGreat}"
+                    Text="&#x1F600;" 
+                    Clicked="Button_Clicked" />
 
-                    <Button Style="{StaticResource RatingButtonStyle}"
-                        SemanticProperties.Description="{x:Static resources:Strings.Resources.RateGreat}"
-                        Text="&#x1F600;" 
-                        Clicked="Button_Clicked" />
+                <Button Grid.Column="1" Style="{StaticResource RatingButtonStyle}" 
+                    SemanticProperties.Description="{x:Static resources:Strings.Resources.RateGood}"
+                    Text="&#x1F60A;" 
+                    Clicked="Button_Clicked" />
 
-                    <Button Style="{StaticResource RatingButtonStyle}"
-                        SemanticProperties.Description="{x:Static resources:Strings.Resources.RateGood}"
-                        Text="&#x1F60A;" 
-                        Clicked="Button_Clicked" />
+                <local:CustomControl Grid.Column="1"
+                    AccessibleName="{x:Static resources:Strings.Resources.RatePoor}"
+                    Text="&#x1F622;" />
 
-                    <local:CustomControl  
-                        AccessibleName="{x:Static resources:Strings.Resources.RatePoor}"
-                        Text="&#x1F622;" />
+                <local:CustomControl Grid.Column="1"
+                    AccessibleName="{x:Static resources:Strings.Resources.RateTerrible}"
+                    Text="&#x1F628;" />
 
-                    <local:CustomControl  
-                        AccessibleName="{x:Static resources:Strings.Resources.RateTerrible}"
-                        Text="&#x1F628;" />
-
-                </HorizontalStackLayout>
             </Grid>
-
+            
         </VerticalStackLayout>
     </ScrollView>
 

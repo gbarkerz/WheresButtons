@@ -97,7 +97,9 @@ namespace WheresButtons.Strings {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Instructions Tee Bee Dee..
+        ///   Looks up a localized string similar to This app demonstrates how UI elements that are not built using appropriate semantic controls can result in the app being unusable for many people. For example, two of the tappable UI elements showing face emojis below cannot be used by people who use their voice to interact with apps on iOS, nor by people who use their keyboards to interact with apps on Windows.
+        ///
+        ///The app is built only to demonstrate that one point, and is not intended to be a usable app. For example, the tappable elements provide no visua [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string MainPageInstructions {
             get {
