@@ -9,8 +9,10 @@
         <Style x:Key="RatingButtonStyle" TargetType="Button">
             <Setter Property="FontSize" Value="Title" />
             <Setter Property="BackgroundColor" Value="Transparent" />
-            <Setter Property="Margin" Value="4" />
-            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="8" />
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" /> 
         </Style>
     </ContentPage.Resources>
 
@@ -40,22 +42,28 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-                <Button Grid.Column="1" Style="{StaticResource RatingButtonStyle}" 
+                <Button Grid.Column="1" Grid.Row="0" Style="{StaticResource RatingButtonStyle}" 
                     SemanticProperties.Description="{x:Static resources:Strings.Resources.RateGreat}"
                     Text="&#x1F600;" 
                     Clicked="Button_Clicked" />
 
-                <Button Grid.Column="1" Style="{StaticResource RatingButtonStyle}" 
+                <Button Grid.Column="1" Grid.Row="1" Style="{StaticResource RatingButtonStyle}" 
                     SemanticProperties.Description="{x:Static resources:Strings.Resources.RateGood}"
                     Text="&#x1F60A;" 
                     Clicked="Button_Clicked" />
 
-                <local:CustomControl Grid.Column="1"
+                <local:CustomControl Grid.Column="1" Grid.Row="2" 
                     AccessibleName="{x:Static resources:Strings.Resources.RatePoor}"
                     Text="&#x1F622;" />
 
-                <local:CustomControl Grid.Column="1"
+                <local:CustomControl Grid.Column="1" Grid.Row="3" 
                     AccessibleName="{x:Static resources:Strings.Resources.RateTerrible}"
                     Text="&#x1F628;" />
 

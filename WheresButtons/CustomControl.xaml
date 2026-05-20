@@ -4,11 +4,13 @@
              x:Class="WheresButtons.CustomControl"
              x:Name="PseudoButtonControl">
 
-        <Grid Margin="0">
+        <Grid Margin="8">
             <Label
                 SemanticProperties.Description="{Binding AccessibleName, Source={x:Reference PseudoButtonControl}}"
                 Text="{Binding Text, Source={x:Reference PseudoButtonControl}}"
-                FontSize="Title">
+                FontSize="Title"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                 </Label.GestureRecognizers>            
